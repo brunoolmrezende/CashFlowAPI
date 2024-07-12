@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
+    <value>Despesa não encontrada.</value>
+  </data>
   <data name="THE_AMOUNT_MUST_BE_GREATER_THAN_ZERO" xml:space="preserve">
     <value>O valor  deve ser maior que zero.</value>
   </data>
-  <data name="THE_DATA_CANNOT_BE_FOR_THE_FUTURE" xml:space="preserve">
+  <data name="THE_EXPENSE_CANNOT_BE_FOR_THE_FUTURE" xml:space="preserve">
     <value>As despesas não podem ser para o futuro.</value>
   </data>
   <data name="THE_PAYMENT_TYPE_IS_INVALID" xml:space="preserve">
