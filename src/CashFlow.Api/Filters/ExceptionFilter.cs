@@ -22,27 +22,11 @@ public class ExceptionFilter : IExceptionFilter
 
     private void HandleProjectException(ExceptionContext context)
     {
-        if (context.Exception is ErrorOnValidationException errorOnValidationException)
-        {
-            var errorResponse = new ResponseErrorJson(errorOnValidationException.Errors);
+        var cashFlowApiException = (CashFlowApiException)context.Exception;
+        var errorResponse = new ResponseErrorJson(cashFlowApiException.GetErrors());
 
-            context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-            context.Result = new BadRequestObjectResult(errorResponse);
-        }
-        else if (context.Exception is NotFoundException notFoundException)
-        {
-            var errorResponse = new ResponseErrorJson(notFoundException.Message);
-
-            context.HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
-            context.Result = new NotFoundObjectResult(errorResponse);
-        }
-        else
-        {
-            var errorResponse = new ResponseErrorJson(context.Exception.Message);
-
-            context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-            context.Result = new BadRequestObjectResult(errorResponse);
-        }
+        context.HttpContext.Response.StatusCode = cashFlowApiException.StatusCode;
+        context.Result = new ObjectResult(errorResponse);
     }
 
     private void HandleUnknownError(ExceptionContext context)
@@ -52,4 +36,5 @@ public class ExceptionFilter : IExceptionFilter
         context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
         context.Result = new ObjectResult(errorResponse);
     }
-}
+        
+    }
