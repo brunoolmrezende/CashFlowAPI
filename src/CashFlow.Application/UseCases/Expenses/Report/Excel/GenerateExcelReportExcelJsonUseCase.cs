@@ -17,8 +17,13 @@ namespace CashFlow.Application.UseCases.Expenses.Report.Excel
            var worksheet = workbook.Worksheets.Add(month.ToString("Y"));
 
             InsertHeader(worksheet);
-        }
 
+            var file = new MemoryStream();
+            workbook.SaveAs(file);
+
+            return file.ToArray();
+        }
+        
         private void InsertHeader(IXLWorksheet worksheet)
         {
             worksheet.Cell("A1").Value = ResourceReportGenerationMessages.TITLE;
