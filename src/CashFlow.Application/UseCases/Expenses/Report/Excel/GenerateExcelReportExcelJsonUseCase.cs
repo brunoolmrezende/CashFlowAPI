@@ -1,13 +1,21 @@
 ﻿
 using CashFlow.Domain.Reports;
+using CashFlow.Domain.Repositories.Expenses;
 using ClosedXML.Excel;
 
 namespace CashFlow.Application.UseCases.Expenses.Report.Excel
 {
     public class GenerateExcelReportExcelJsonUseCase : IGenerateExcelReportExcelJsonUseCase
     {
+        private readonly IExpensesReadOnlyRepository _repository;
+        public GenerateExcelReportExcelJsonUseCase(IExpensesReadOnlyRepository repository)
+        {
+            _repository = repository;
+        }
         public async Task<byte[]> Execute(DateOnly month)
         {
+            var expenses = await _repository.FilterByMonth(month);
+
             var workbook = new XLWorkbook();
 
             workbook.Author = "Bruno Rezende";
