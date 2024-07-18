@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="Enums\ResourceConvertPaymentType.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceConvertPaymentType.resx</DependentUpon>
+    </Compile>
     <Compile Update="Reports\ResourceReportGenerationMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -15,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Enums\ResourceConvertPaymentType.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceConvertPaymentType.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Reports\ResourceReportGenerationMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceReportGenerationMessages.Designer.cs</LastGenOutput>
