@@ -8,6 +8,7 @@ namespace CashFlow.Application.UseCases.Expenses.Report.Excel
 {
     public class GenerateExcelReportExcelJsonUseCase : IGenerateExcelReportExcelJsonUseCase
     {
+        private const string CURRENCY_SYMBOL = "R$";
         private readonly IExpensesReadOnlyRepository _repository;
         public GenerateExcelReportExcelJsonUseCase(IExpensesReadOnlyRepository repository)
         {
@@ -37,11 +38,16 @@ namespace CashFlow.Application.UseCases.Expenses.Report.Excel
                 worksheet.Cell($"A{row}").Value = expense.Title;
                 worksheet.Cell($"B{row}").Value = expense.Date;
                 worksheet.Cell($"C{row}").Value = ConvertPaymentType(expense.PaymentType);
+
                 worksheet.Cell($"D{row}").Value = expense.Amount;
+                worksheet.Cells($"D{row}").Style.NumberFormat.Format = $"-{CURRENCY_SYMBOL} #,##0.00";
+
                 worksheet.Cell($"E{row}").Value = expense.Description;
 
                 row++;
             }
+
+            worksheet.Columns().AdjustToContents();
 
             var file = new MemoryStream();
             workbook.SaveAs(file);
