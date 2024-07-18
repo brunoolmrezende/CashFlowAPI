@@ -6,11 +6,11 @@ using PaymentType = CashFlow.Domain.Enums.PaymentType;
 
 namespace CashFlow.Application.UseCases.Expenses.Report.Excel
 {
-    public class GenerateExcelReportExcelJsonUseCase : IGenerateExcelReportExcelJsonUseCase
+    public class GenerateReportExcelJsonUseCase : IGenerateReportExcelJsonUseCase
     {
         private const string CURRENCY_SYMBOL = "R$";
         private readonly IExpensesReadOnlyRepository _repository;
-        public GenerateExcelReportExcelJsonUseCase(IExpensesReadOnlyRepository repository)
+        public GenerateReportExcelJsonUseCase(IExpensesReadOnlyRepository repository)
         {
             _repository = repository;
         }

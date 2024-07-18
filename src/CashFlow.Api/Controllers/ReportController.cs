@@ -12,7 +12,7 @@ namespace CashFlow.Api.Controllers;
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> GetExcel(
-        [FromServices] IGenerateExcelReportExcelJsonUseCase useCase,
+        [FromServices] IGenerateReportExcelJsonUseCase useCase,
         [FromHeader] DateOnly month)
     {
         byte[] file = await useCase.Execute(month);
@@ -22,5 +22,16 @@ namespace CashFlow.Api.Controllers;
 
         return NoContent();
     }
+
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> GetPdf(
+        [FromServices] ,
+        [FromHeader] DateOnly month)
+    {
+
+    }
+
  }
 
