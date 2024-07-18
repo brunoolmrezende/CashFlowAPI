@@ -22,7 +22,7 @@ namespace CashFlow.Application.UseCases.Expenses.Report.Excel
                 return [];
             }
 
-            var workbook = new XLWorkbook();
+            using var workbook = new XLWorkbook();
 
             workbook.Author = "Bruno Rezende";
             workbook.Style.Font.FontSize = 12;
