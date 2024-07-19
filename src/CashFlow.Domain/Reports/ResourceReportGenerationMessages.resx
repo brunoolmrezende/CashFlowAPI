@@ -126,6 +126,9 @@
   <data name="DESCRIPTION" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="EXPENSES_FOR" xml:space="preserve">
+    <value>Expenses for</value>
+  </data>
   <data name="PAYMENT_TYPE" xml:space="preserve">
     <value>Payment Type</value>
   </data>
