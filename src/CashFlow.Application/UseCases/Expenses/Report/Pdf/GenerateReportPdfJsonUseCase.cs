@@ -30,6 +30,16 @@ namespace CashFlow.Application.UseCases.Expenses.Report.Pdf
             var document = CreateDocument(month);
             var page = CreatePage(document);
 
+            var table = page.AddTable();
+            table.AddColumn();
+            table.AddColumn();
+
+            var row = table.AddRow();
+            row.Cells[0].AddImage("C:\\Users\\AEVO-BRUNO\\Downloads\\Profile Photo 62x62.png");
+
+            row.Cells[1].AddParagraph("Hey, Bruno Rezende");
+            row.Cells[1].Format.Font = new Font { Name = FontHelper.RALEWAY_BLACK, Size = 16 };
+
             var paragraph = page.AddParagraph();
             var title = string.Format(ResourceReportGenerationMessages.TOTAL_SPENT_IN, month.ToString("Y"));
 
