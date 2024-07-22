@@ -4,14 +4,6 @@ Esta **API**, desenvolvida com **.NET 8**, segue os princípios do **Domain-Driv
 
 A arquitetura da **API** é baseada em **REST**, utilizando métodos **HTTP** padrão para uma comunicação eficiente. Além disso, conta com documentação **Swagger**, proporcionando uma interface gráfica interativa para que os desenvolvedores possam explorar e testar os endpoints facilmente.
 
-Entre os pacotes NuGet utilizados, destacam-se:
+Dentre os pacotes NuGet utilizados, o **AutoMapper** facilita o mapeamento entre objetos de domínio e requisição/resposta, reduzindo a necessidade de código repetitivo e manual. O **FluentAssertions** é empregado nos testes de unidade, tornando as verificações mais legíveis e ajudando a escrever testes claros e compreensíveis. Para as validações, o **FluentValidation** implementa regras de forma simples e intuitiva nas classes de requisições, mantendo o código limpo e fácil de manter. Por fim, o **EntityFramework** atua como um ORM (Object-Relational Mapper), simplificando as interações com o banco de dados e permitindo o uso de objetos .NET para manipular dados diretamente, sem a necessidade de lidar com consultas SQL.
 
-**AutoMapper**: Facilita o mapeamento entre objetos de domínio e requisição/resposta, reduzindo a necessidade de código repetitivo.
 
-**FluentAssertions**: Torna as verificações nos testes de unidade mais legíveis e compreensíveis.
-
-**FluentValidation**: Implementa regras de validação de forma simples e intuitiva nas classes de requisições, mantendo o código limpo e fácil de manter.
-
-**EntityFramework**: Atua como um ORM (Object-Relational Mapper), simplificando as interações com o banco de dados e permitindo o uso de objetos .NET para manipular dados diretamente, sem a necessidade de lidar com consultas SQL.
-
-Essa combinação de tecnologias e práticas garante uma API robusta, segura e fácil de usar e manter.
