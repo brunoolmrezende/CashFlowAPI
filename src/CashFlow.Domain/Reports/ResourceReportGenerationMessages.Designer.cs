@@ -70,11 +70,38 @@ namespace CashFlow.Domain.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cash.
+        /// </summary>
+        public static string CASH {
+            get {
+                return ResourceManager.GetString("CASH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit Card.
+        /// </summary>
+        public static string CREDIT_CARD {
+            get {
+                return ResourceManager.GetString("CREDIT_CARD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string DATE {
             get {
                 return ResourceManager.GetString("DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debit Card.
+        /// </summary>
+        public static string DEBIT_CARD {
+            get {
+                return ResourceManager.GetString("DEBIT_CARD", resourceCulture);
             }
         }
         
@@ -102,6 +129,15 @@ namespace CashFlow.Domain.Reports {
         public static string PAYMENT_TYPE {
             get {
                 return ResourceManager.GetString("PAYMENT_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pix.
+        /// </summary>
+        public static string PIX {
+            get {
+                return ResourceManager.GetString("PIX", resourceCulture);
             }
         }
         
