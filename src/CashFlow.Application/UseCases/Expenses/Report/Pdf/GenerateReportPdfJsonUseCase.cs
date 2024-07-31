@@ -8,7 +8,7 @@ using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
 using PdfSharp.Fonts;
 using System.Reflection;
-using CashFlow.Domain.Enums.Extensions;
+using CashFlow.Domain.Extensions;
 
 namespace CashFlow.Application.UseCases.Expenses.Report.Pdf
 {

@@ -1,4 +1,4 @@
-﻿using CashFlow.Domain.Enums.Extensions;
+﻿using CashFlow.Domain.Extensions;
 using CashFlow.Domain.Reports;
 using CashFlow.Domain.Repositories.Expenses;
 using ClosedXML.Excel;
