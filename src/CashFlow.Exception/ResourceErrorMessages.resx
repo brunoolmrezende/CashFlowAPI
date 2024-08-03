@@ -129,6 +129,9 @@
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>The name cannot be empty.</value>
   </data>
+  <data name="PASSWORD_INVALID" xml:space="preserve">
+    <value>Your password must be at least 8 characters long, containing at least one uppercase letter, one lowercase letter, one number, and one special character (for example, !,?,.).</value>
+  </data>
   <data name="THE_AMOUNT_MUST_BE_GREATER_THAN_ZERO" xml:space="preserve">
     <value>The amount must be greater than zero.</value>
   </data>

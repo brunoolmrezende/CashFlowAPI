@@ -97,6 +97,15 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your password must be at least 8 characters long, containing at least one uppercase letter, one lowercase letter, one number, and one special character (for example, !,?,.)..
+        /// </summary>
+        public static string PASSWORD_INVALID {
+            get {
+                return ResourceManager.GetString("PASSWORD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The amount must be greater than zero..
         /// </summary>
         public static string THE_AMOUNT_MUST_BE_GREATER_THAN_ZERO {
