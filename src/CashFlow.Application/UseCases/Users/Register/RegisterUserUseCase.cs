@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
+using CashFlow.Domain.Repositories.User;
 using CashFlow.Domain.Security.Cryptography;
+using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
 
 namespace CashFlow.Application.UseCases.Users.Register
@@ -10,10 +12,15 @@ namespace CashFlow.Application.UseCases.Users.Register
     {
         private readonly IMapper _mapper;
         private readonly IPasswordEncripter _passwordEncripter;
-        public RegisterUserUseCase(IMapper mapper, IPasswordEncripter passwordEncripter)
+        private readonly IUserReadOnlyRepository _repository;
+        public RegisterUserUseCase(
+            IMapper mapper, 
+            IPasswordEncripter passwordEncripter,
+            IUserReadOnlyRepository repository)
         {
             _mapper = mapper;
             _passwordEncripter = passwordEncripter;
+            _repository = repository;
         }
         public async Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson request)
         {
@@ -28,11 +35,18 @@ namespace CashFlow.Application.UseCases.Users.Register
             };
         }
 
-        private void Validate(RequestRegisterUserJson request)
+        private async Task Validate(RequestRegisterUserJson request)
         {
             var validator = new RegisterUserValidator();
 
             var result = validator.Validate(request);
+
+            var emailExist = await _repository.ExistActiveUserWithEmail(request.Email);
+
+            if (emailExist)
+            {
+                result.Errors.Add(new FluentValidation.Results.ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_ALREADY_EXISTS));
+            }
 
             if (result.IsValid is false)
             {
