@@ -17,7 +17,7 @@ namespace CashFlow.Infrastructure
            AddDbContext(services, configuration);
            AddRepositories(services);
 
-           services.AddScoped<IPasswordEncripter, Infrastructure.Security.BCrypt>();
+           services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
         }
 
         private static void AddRepositories(IServiceCollection services)
