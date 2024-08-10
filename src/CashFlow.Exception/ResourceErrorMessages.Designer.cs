@@ -79,7 +79,7 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Th e-mail is not valid..
+        ///   Looks up a localized string similar to The e-mail is not valid..
         /// </summary>
         public static string EMAIL_INVALID {
             get {
