@@ -30,8 +30,9 @@ namespace UseCases.Test.Users.Register
             var userWriteOnlyRepository = UserWriteOnlyRepositoryBuilder.Build();
             var passwordEncripter = PasswordEncripterBuilder.Build();
             var tokenGenerator = JwtTokenGeneratorBuilder.Build();
+            var userReadOnlyRepository = new UserReadOnlyRepositoryBuilder().Build();
 
-            return new RegisterUserUseCase(mapper, passwordEncripter, null, userWriteOnlyRepository, unitOfWork, tokenGenerator);
+            return new RegisterUserUseCase(mapper, passwordEncripter, userReadOnlyRepository, userWriteOnlyRepository, unitOfWork, tokenGenerator);
         }
     }
 }
