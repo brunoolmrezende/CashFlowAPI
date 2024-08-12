@@ -5,7 +5,7 @@ using CashFlow.Domain.Security.Cryptography;
 using CashFlow.Domain.Security.Tokens;
 using CashFlow.Exception.ExceptionsBase;
 
-namespace CashFlow.Application.UseCases.Users.Login
+namespace CashFlow.Application.UseCases.Login.DoLogin
 {
     public class DoLoginUseCase : IDoLoginUseCase
     {
@@ -30,9 +30,9 @@ namespace CashFlow.Application.UseCases.Users.Login
                 throw new InvalidLoginException();
             }
 
-           var passwordMatch = _passwordEncripter.Verify(request.Password, user.Password);
+            var passwordMatch = _passwordEncripter.Verify(request.Password, user.Password);
 
-            if (passwordMatch  is false)
+            if (passwordMatch is false)
             {
                 throw new InvalidLoginException();
             }

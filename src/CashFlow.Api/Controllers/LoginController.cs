@@ -1,4 +1,4 @@
-﻿using CashFlow.Application.UseCases.Users.Login;
+﻿using CashFlow.Application.UseCases.Login.DoLogin;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
