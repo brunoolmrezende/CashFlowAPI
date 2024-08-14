@@ -99,3 +99,5 @@ async Task MigrateDataBase()
 
     await DataBaseMigration.MigrateDataBase(scope.ServiceProvider);
 }
+
+public partial class Program { }
