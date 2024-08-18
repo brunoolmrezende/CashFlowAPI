@@ -26,8 +26,6 @@ namespace CashFlow.Infrastructure
             {
                 AddDbContext(services, configuration);
             }
-
-
         }
 
         private static void AddToken(this IServiceCollection services, IConfiguration configuration)
