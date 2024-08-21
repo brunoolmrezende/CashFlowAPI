@@ -34,9 +34,9 @@ namespace CashFlow.Infrastructure.DataAccess.Repositories
         {
             return await _dbContext.Expenses.AsNoTracking().FirstOrDefaultAsync(expense => expense.Id == id);
         }
-        async Task<Expense?> IExpenseUpdateOnlyRepository.GetById(long id)
+        async Task<Expense?> IExpenseUpdateOnlyRepository.GetById(User user, long id)
         {
-            return await _dbContext.Expenses.FirstOrDefaultAsync(expense => expense.Id == id);
+            return await _dbContext.Expenses.FirstOrDefaultAsync(expense => expense.Id == id && expense.UserId == user.Id);
         }
 
         public void Update(Expense expense)
