@@ -11,7 +11,7 @@ namespace CashFlow.Application.UseCases.Users.UpdateProfile
     public class UpdateProfileUseCase : IUpdateProfileUseCase
     {
         private readonly ILoggedUser _loggedUser;
-        IUserUpdateOnlyRepository _userUpdateOnlyRepository;
+        private readonly IUserUpdateOnlyRepository _userUpdateOnlyRepository;
         private readonly IUserReadOnlyRepository _userReadOnlyRepository;
         private readonly IUnitOfWork _unitOfWork;
 
