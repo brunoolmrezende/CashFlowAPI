@@ -1,4 +1,5 @@
 ﻿using CashFlow.Application.UseCases.Users.ChangePassword;
+using CashFlow.Application.UseCases.Users.DeleteProfile;
 using CashFlow.Application.UseCases.Users.GetProfile;
 using CashFlow.Application.UseCases.Users.Register;
 using CashFlow.Application.UseCases.Users.UpdateProfile;
@@ -57,6 +58,16 @@ namespace CashFlow.Api.Controllers
             [FromBody] RequestChangePasswordJson request)
         {
             await useCase.Execute(request);
+
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> DeleteProfile([FromServices] IDeleteProfileUseCase useCase)
+        {
+            await useCase.Execute();
 
             return NoContent();
         }
