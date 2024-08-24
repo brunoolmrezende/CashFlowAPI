@@ -25,6 +25,7 @@ namespace CashFlow.Application.AutoMapper
             CreateMap<Expense, ResponseRegisteredExpenseJson>();
             CreateMap<Expense, ResponseShortExpensesJson>();
             CreateMap<Expense, ResponseExpenseJson>();
+            CreateMap<User, ResponseUserProfileJson>();
         }
     }
 }
