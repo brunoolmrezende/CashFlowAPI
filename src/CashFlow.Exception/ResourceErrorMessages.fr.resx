@@ -141,6 +141,9 @@
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>Votre mot de passe doit comporter au moins 8 caractères, contenant au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial (par exemple, !,?,.).</value>
   </data>
+  <data name="TAG_TYPE_NOT_SUPPORTED" xml:space="preserve">
+    <value>Balise non prise en charge.</value>
+  </data>
   <data name="THE_AMOUNT_MUST_BE_GREATER_THAN_ZERO" xml:space="preserve">
     <value>Le montant doit être supérieur à zéro.</value>
   </data>

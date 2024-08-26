@@ -141,6 +141,9 @@
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>Your password must be at least 8 characters long, containing at least one uppercase letter, one lowercase letter, one number, and one special character (for example, !,?,.).</value>
   </data>
+  <data name="TAG_TYPE_NOT_SUPPORTED" xml:space="preserve">
+    <value>Tag not supported.</value>
+  </data>
   <data name="THE_AMOUNT_MUST_BE_GREATER_THAN_ZERO" xml:space="preserve">
     <value>The amount must be greater than zero.</value>
   </data>

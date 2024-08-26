@@ -141,6 +141,9 @@
   <data name="PASSWORD_INVALID" xml:space="preserve">
     <value>Sua senha deve ter no mínimo 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial (por exemplo, !,?,.).</value>
   </data>
+  <data name="TAG_TYPE_NOT_SUPPORTED" xml:space="preserve">
+    <value>Tag não suportada.</value>
+  </data>
   <data name="THE_AMOUNT_MUST_BE_GREATER_THAN_ZERO" xml:space="preserve">
     <value>O valor  deve ser maior que zero.</value>
   </data>
